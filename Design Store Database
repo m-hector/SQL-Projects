@@ -1,0 +1,23 @@
+Create your own store! Your store should sell one type of things, like clothing or bikes, whatever you want your store to specialize in. 
+You should have a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. 
+You should sell at least 15 items, and use select statements to order your items by price and show at least one statistic about the items.
+
+Create table Products (ID Integer Primary Key, Name Text, Price integer, quantity integer, size text, color text);
+
+insert into products values (1, "Halloween Bandana", 20, 3, "M" , "orange");
+insert into products values (2, "Halloween Bandana", 25, 2, "L", "Red");
+insert into products values (3, "Christmas Bandana", 15, 1, "S", "Blue");
+insert into products values (4, "Christmas Bandana", 20, 3, "M", "White");
+insert into products values (5, "Christmas Bandana", 25, 2, "L", "Blue");
+insert into products values (6, "Butterfly Bandana", 25, 1, "M", "Orange");
+insert into products values (7, "Butterfly Bandana", 30, 2, "L", "Orange");
+insert into products values (8, "Butterfly Bandana", 20, 3, "S", "Orange");
+insert into products values (9, "Ladybug Bandana", 25, 7, "S", "Red");
+insert into products values (10, "Ladybug Bandana", 30, 3, "M", "Red");
+insert into products values (11, "T-Rex Bandana", 15, 5, "S", "Green");
+insert into products values (12, "T-Rex Bandana", 20, 8, "M", "Green");
+insert into products values (13, "T-Rex Bandana", 25, 3, "L", "Green");
+insert into products values (14, "Bone Bandana", 25, 4, "L", "Gray");
+insert into products values (15, "Bone Bandana", 20, 2, "M", "Gray");
+
+select name, size, quantity from products where quantity >3  order by price

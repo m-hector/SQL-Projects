@@ -1,0 +1,29 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE billionares (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Owner TEXT,
+    age INTEGER,
+    Teamowned TEXT);
+    
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Mark Cuban", 64, "Dallas Mavericks");
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Jerry Jones", 80, "Dallas Cowboys");
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Dean Spanos", 72, "US");
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Stan Kroenke", 75, "Los Angeles Rams");
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Robert Kraft", 81, "New England Patriots");
+
+CREATE table wealth (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    billionare_id INTEGER,
+    net_worth TEXT,
+    source_wealth TEXT);
+    
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (1, "4.6 billion", "Investor");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (2, "13.5 billion", "Oil");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (3, "1 billion", "Real Estate");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (4, "12.9 billion", "Real Estate");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (5, "10.6 billion", "Investor");
+
+select billionares.owner, billionares.teamowned as "Team Owned", wealth.net_worth as "Owner Networth"
+    from billionares join wealth
+    on billionares.id=wealth.billionare_id

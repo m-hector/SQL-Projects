@@ -11,6 +11,9 @@ INSERT INTO billionares (Owner, age, teamowned) VALUES ("Jerry Jones", 80, "Dall
 INSERT INTO billionares (Owner, age, teamowned) VALUES ("Dean Spanos", 72, "US");
 INSERT INTO billionares (Owner, age, teamowned) VALUES ("Stan Kroenke", 75, "Los Angeles Rams");
 INSERT INTO billionares (Owner, age, teamowned) VALUES ("Robert Kraft", 81, "New England Patriots");
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Steve Ballmer", 66, "Los Angeles Clippers");
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Dan Gilbert", 61, "Cleveland Cavaliers");
+INSERT INTO billionares (Owner, age, teamowned) VALUES ("Ann Walton Kroenke", 74, "Denver Nuggets");
 
 CREATE table wealth (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,7 +25,10 @@ INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (1, "4.6 bil
 INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (2, "13.5 billion", "Oil");
 INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (3, "1 billion", "Real Estate");
 INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (4, "12.9 billion", "Real Estate");
-INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (5, "10.6 billion", "Investor");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (6, "10.6 billion", "Investor");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (7, "84.4 billion", "Microsoft");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (8, "19.1 billion", "Rocket Mortgage");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (9, "8.7 billion", "Walmart");
 
 select billionares.owner, billionares.teamowned as "Team Owned", wealth.net_worth as "Owner Networth"
     from billionares join wealth

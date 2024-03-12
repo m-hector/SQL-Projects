@@ -1,19 +1,19 @@
-/* Create table about the people and what they do here */
+#Created table to show billionaire sports owners
 
-CREATE TABLE billionares (
+CREATE TABLE billionaires (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Owner TEXT,
     age INTEGER,
     Teamowned TEXT);
     
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Mark Cuban", 64, "Dallas Mavericks");
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Jerry Jones", 80, "Dallas Cowboys");
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Dean Spanos", 72, "US");
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Stan Kroenke", 75, "Los Angeles Rams");
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Robert Kraft", 81, "New England Patriots");
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Steve Ballmer", 66, "Los Angeles Clippers");
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Dan Gilbert", 61, "Cleveland Cavaliers");
-INSERT INTO billionares (Owner, age, teamowned) VALUES ("Ann Walton Kroenke", 74, "Denver Nuggets");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Mark Cuban", 64, "Dallas Mavericks");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Jerry Jones", 80, "Dallas Cowboys");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Dean Spanos", 72, "US");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Stan Kroenke", 75, "Los Angeles Rams");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Robert Kraft", 81, "New England Patriots");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Steve Ballmer", 66, "Los Angeles Clippers");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Dan Gilbert", 61, "Cleveland Cavaliers");
+INSERT INTO billionaires (Owner, age, teamowned) VALUES ("Ann Walton Kroenke", 74, "Denver Nuggets");
 
 CREATE table wealth (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,6 +30,7 @@ INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (7, "84.4 bi
 INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (8, "19.1 billion", "Rocket Mortgage");
 INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (9, "8.7 billion", "Walmart");
 
-select billionares.owner, billionares.teamowned as "Team Owned", wealth.net_worth as "Owner Networth"
-    from billionares join wealth
-    on billionares.id=wealth.billionare_id
+#Used Select and Join statement to show billionaire owner and networth
+select billionaires.owner, billionaires.teamowned as "Team Owned", wealth.net_worth as "Owner Networth"
+    from billionaires join wealth
+    on billionaires.id=wealth.billionare_id

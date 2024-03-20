@@ -66,3 +66,20 @@ else 'Poor Retention Rate'
 end as Retention_Rating,
 count (*) from fortune_companies
 group by Retention_Rating;
+
+## Average employees for industries that have an average revenue of 200M
+select Industry, avg(employees)
+from fortune_companies
+group by industry
+having (avg(revenue)>200);
+
+## Average Employees for Employers that Offer Healthcare and those that do not
+
+select 
+case when healthcare_benefits =1 then 'Offers Healthcare'
+else 'Does Not Offer Healthcare'
+end as Healthcare_Offered
+, Round(avg(employees))
+from fortune_companies
+group by Healthcare_Offered;
+

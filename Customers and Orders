@@ -53,4 +53,9 @@ select Product,sum(quantity), price, sum(quantity) * price as revenue from BIT_D
     where FebSales.Quantity >2
     and length (orderid)=6
     and orderid <> 'Order ID';
- 
+
+#8. Which product and how many were sold in Los Angeles? 
+select product, Sum(quantity) from BIT_DB.FebSales
+    where location like '%Los Angeles%'
+    group by product;
+

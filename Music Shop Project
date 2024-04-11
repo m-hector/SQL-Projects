@@ -1,0 +1,30 @@
+## Query the Name, Country and the cost that each Customer spent
+select cust.FirstName ||' ' || cust.LastName as FullName, cust.Country, round(sum(inv.total),2) as TotalCost
+
+from chinook.customers as cust
+inner join chinook.invoices as inv
+on  cust.customerID= inv.CustomerID
+
+group by FullName;
+
+##Query Employee name and invoices that they assisted on
+select Emp.FirstName ||' ' || Emp.LastName as FullName, inv.invoiceID
+from chinook.employees as emp
+inner join chinook.customers as cust on cust.SupportRepId= emp.EmployeeId
+inner join chinook.invoices as inv on  cust.customerID= inv.CustomerID
+ 
+where title='Sales Support Agent'
+;
+
+## Total sum of sales done in 2009
+select sum(total)
+from chinook.invoices
+where invoiceDate between '2009-01-01' and '2009-12-31';
+
+## Pulled a query for the Track, artist, album, and genre
+select t.name as Track, art.name as Artist, a.title as Album, g.name as Genre
+
+from tracks as t
+join albums as a on t.albumID= a.albumID
+join genres as g on g.GenreID= t.genreID
+join artists as art on a.artistID= art.artistID
